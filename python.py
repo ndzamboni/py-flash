@@ -1,4 +1,5 @@
 import random
+from fuzzywuzzy import fuzz
 
 class Flashcard:
     def __init__(self, front, back):
@@ -30,7 +31,11 @@ class FlashcardApp:
         input("Press Enter to reveal the front of the flashcard.")
         print(f"Front: {random_flashcard.front}")
         guess = input("What is the concept or example? ").strip().lower()
-        if guess.lower() == random_flashcard.back.lower():
+
+        # Compare the similarity between the guess and the correct answer
+        similarity_ratio = fuzz.partial_ratio(guess.lower(), random_flashcard.back.lower())
+
+        if similarity_ratio >= 80:  # Adjust threshold as needed
             print("Correct!")
         else:
             print(f"Incorrect. The correct answer is: {random_flashcard.back}")
@@ -40,6 +45,7 @@ def main():
     flashcard_app.add_flashcard("What is a variable?", "A variable is a named storage location in memory.")
     flashcard_app.add_flashcard("What is a for loop?", "A for loop is used for iterating over a sequence (list, tuple, dictionary, etc.).")
     flashcard_app.add_flashcard("What is a function?", "A function is a block of reusable code that performs a specific task.")
+    flashcard_app.add_flashcard("What is a list comprehension?", "A list comprehension is a concise way to create lists in Python.")
 
     while True:
         print("\nFlashcard App Menu:")
