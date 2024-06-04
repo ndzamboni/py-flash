@@ -46,6 +46,11 @@ def main():
     flashcard_app.add_flashcard("What is a for loop?", "A for loop is used for iterating over a sequence (list, tuple, dictionary, etc.).")
     flashcard_app.add_flashcard("What is a function?", "A function is a block of reusable code that performs a specific task.")
     flashcard_app.add_flashcard("What is a list comprehension?", "A list comprehension is a concise way to create lists in Python.")
+    flashcard_app.add_flashcard("What are dictionaries?", "Dictionaries are unordered collections of key-value pairs.")
+    flashcard_app.add_flashcard("What is a module?", "A module is a file containing Python code, which can define functions, classes, and variables.")
+    flashcard_app.add_flashcard("What is a string?", "A string is a sequence of characters, enclosed in quotes.")
+    flashcard_app.add_flashcard("What is a tuple?", "A tuple is an immutable sequence of values, separated by commas and enclosed in parentheses.")
+    flashcard_app.add_flashcard("What is a class?", "A class is a blueprint for creating objects, providing initial values and methods.")
 
     while True:
         print("\nFlashcard App Menu:")
